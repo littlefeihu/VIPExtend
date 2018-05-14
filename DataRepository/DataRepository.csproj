@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4BCBD771-D0E9-47CA-8051-6B7DB46D3452}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataRepository</RootNamespace>
+    <AssemblyName>DataRepository</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="cw_t_select.cs" />
+    <Compile Include="cw_t_sup_info.cs" />
+    <Compile Include="cw_t_system.cs" />
+    <Compile Include="dtproperty.cs" />
+    <Compile Include="mess_t_mess_flow.cs" />
+    <Compile Include="mess_t_mess_record.cs" />
+    <Compile Include="mess_t_sys_system.cs" />
+    <Compile Include="mess_t_vip_message.cs" />
+    <Compile Include="Model1.cs" />
+    <Compile Include="pbcatedt.cs" />
+    <Compile Include="pbcatfmt.cs" />
+    <Compile Include="pbcatvld.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sys_verfile.cs" />
+    <Compile Include="t_bd_appitem_info.cs" />
+    <Compile Include="t_bd_auto_subno.cs" />
+    <Compile Include="t_bd_basecode_type.cs" />
+    <Compile Include="t_bd_base_code.cs" />
+    <Compile Include="t_bd_branch_area.cs" />
+    <Compile Include="t_bd_branch_group_info.cs" />
+    <Compile Include="t_bd_branch_info.cs" />
+    <Compile Include="t_bd_branch_info_weixin.cs" />
+    <Compile Include="t_bd_branch_item_info.cs" />
+    <Compile Include="t_bd_city.cs" />
+    <Compile Include="t_bd_deduct_condrcd.cs" />
+    <Compile Include="t_bd_export_format.cs" />
+    <Compile Include="t_bd_item_barcode.cs" />
+    <Compile Include="t_bd_item_barcode_breakpoint.cs" />
+    <Compile Include="t_bd_item_brand.cs" />
+    <Compile Include="t_bd_item_brand_breakpoint.cs" />
+    <Compile Include="t_bd_item_cls.cs" />
+    <Compile Include="t_bd_item_cls_breakpoint.cs" />
+    <Compile Include="t_bd_item_cls_weixin.cs" />
+    <Compile Include="t_bd_item_combsplit.cs" />
+    <Compile Include="t_bd_item_combsplit_breakpoint.cs" />
+    <Compile Include="t_bd_item_contract.cs" />
+    <Compile Include="t_bd_item_info.cs" />
+    <Compile Include="t_bd_item_info_breakpoint.cs" />
+    <Compile Include="t_bd_item_info_weixin.cs" />
+    <Compile Include="t_bd_item_setup.cs" />
+    <Compile Include="t_bd_item_setup1.cs" />
+    <Compile Include="t_bd_item_update_flow.cs" />
+    <Compile Include="t_bd_payment_info.cs" />
+    <Compile Include="t_bd_payment_info_breakpoint.cs" />
+    <Compile Include="t_bd_place_info.cs" />
+    <Compile Include="t_bd_place_item_info.cs" />
+    <Compile Include="t_bd_supcust_area.cs" />
+    <Compile Include="t_bd_supcust_cls.cs" />
+    <Compile Include="t_bd_supcust_info.cs" />
+    <Compile Include="t_bd_supcust_item.cs" />
+    <Compile Include="t_bd_supcust_saleway.cs" />
+    <Compile Include="t_cm_da_jxc_daysum.cs" />
+    <Compile Include="t_cm_fm_charge_detail.cs" />
+    <Compile Include="t_cm_fm_charge_master.cs" />
+    <Compile Include="t_cm_fm_recpay_detail.cs" />
+    <Compile Include="t_cm_fm_recpay_flow.cs" />
+    <Compile Include="t_cm_fm_recpay_master.cs" />
+    <Compile Include="t_cm_im_branch_stock.cs" />
+    <Compile Include="t_cm_im_branch_stock_fix.cs" />
+    <Compile Include="t_cm_im_check_detail.cs" />
+    <Compile Include="t_cm_im_check_init.cs" />
+    <Compile Include="t_cm_im_check_master.cs" />
+    <Compile Include="t_cm_im_check_sum.cs" />
+    <Compile Include="t_cm_im_flow.cs" />
+    <Compile Include="t_cm_im_sheet_detail.cs" />
+    <Compile Include="t_cm_im_sheet_master.cs" />
+    <Compile Include="t_cm_pc_price_flow_detail.cs" />
+    <Compile Include="t_cm_pc_price_flow_master.cs" />
+    <Compile Include="t_cm_pm_sheet_detail.cs" />
+    <Compile Include="t_cm_pm_sheet_master.cs" />
+    <Compile Include="t_cm_rm_payflow.cs" />
+    <Compile Include="t_cm_rm_payin_detail.cs" />
+    <Compile Include="t_cm_rm_payin_master.cs" />
+    <Compile Include="t_cm_rm_protion_flow.cs" />
+    <Compile Include="t_cm_rm_saleflow.cs" />
+    <Compile Include="t_cm_rm_vip_acclist.cs" />
+    <Compile Include="t_cm_rm_vip_info_edit.cs" />
+    <Compile Include="t_cm_rm_vip_savelist.cs" />
+    <Compile Include="t_cm_sys_oper_grant.cs" />
+    <Compile Include="t_cm_sys_pos_status_history.cs" />
+    <Compile Include="t_cm_vip_sheet_detail.cs" />
+    <Compile Include="t_cm_vip_sheet_master.cs" />
+    <Compile Include="t_cm_wm_sheet_detail.cs" />
+    <Compile Include="t_cm_wm_sheet_master.cs" />
+    <Compile Include="t_da_clssell_aim.cs" />
+    <Compile Include="t_da_jxc_daysum.cs" />
+    <Compile Include="t_da_jxc_month.cs" />
+    <Compile Include="t_da_jxc_month_anal.cs" />
+    <Compile Include="t_da_jxc_week.cs" />
+    <Compile Include="t_da_saleman_daysum.cs" />
+    <Compile Include="t_da_saleman_deduct_flow.cs" />
+    <Compile Include="t_da_sale_plan.cs" />
+    <Compile Include="t_da_sell_aim.cs" />
+    <Compile Include="t_da_total_daysum.cs" />
+    <Compile Include="t_da_transell_aim.cs" />
+    <Compile Include="t_da_tran_aim.cs" />
+    <Compile Include="t_dm_input_init.cs" />
+    <Compile Include="t_exec_info.cs" />
+    <Compile Include="t_fm_cash_account_info.cs" />
+    <Compile Include="t_fm_cash_detail.cs" />
+    <Compile Include="t_fm_cash_master.cs" />
+    <Compile Include="t_fm_charge_detail.cs" />
+    <Compile Include="t_fm_charge_master.cs" />
+    <Compile Include="t_fm_recpay_detail.cs" />
+    <Compile Include="t_fm_recpay_flow.cs" />
+    <Compile Include="t_fm_recpay_ly_detail.cs" />
+    <Compile Include="t_fm_recpay_ly_master.cs" />
+    <Compile Include="t_fm_recpay_master.cs" />
+    <Compile Include="t_im_autoplan_set.cs" />
+    <Compile Include="t_im_batch.cs" />
+    <Compile Include="t_im_batch_move.cs" />
+    <Compile Include="t_im_batch_out.cs" />
+    <Compile Include="t_im_batch_suspend.cs" />
+    <Compile Include="t_im_branch_stock.cs" />
+    <Compile Include="t_im_checkrecord_detail.cs" />
+    <Compile Include="t_im_checkrecord_master.cs" />
+    <Compile Include="t_im_check_bak.cs" />
+    <Compile Include="t_im_check_bak2.cs" />
+    <Compile Include="t_im_check_detail.cs" />
+    <Compile Include="t_im_check_init.cs" />
+    <Compile Include="t_im_check_master.cs" />
+    <Compile Include="t_im_check_sum.cs" />
+    <Compile Include="t_im_comb_split_detail.cs" />
+    <Compile Include="t_im_comb_split_master.cs" />
+    <Compile Include="t_im_cs_flow.cs" />
+    <Compile Include="t_im_flow.cs" />
+    <Compile Include="t_im_flow_shd.cs" />
+    <Compile Include="t_im_pdjin.cs" />
+    <Compile Include="t_im_sheet_detail.cs" />
+    <Compile Include="t_im_sheet_master.cs" />
+    <Compile Include="t_im_stock_target.cs" />
+    <Compile Include="t_ms_comm_used.cs" />
+    <Compile Include="t_ms_cust_info.cs" />
+    <Compile Include="t_ms_group_info.cs" />
+    <Compile Include="t_ms_mess_flow.cs" />
+    <Compile Include="t_order_bill_weixin.cs" />
+    <Compile Include="t_pc_branch_data.cs" />
+    <Compile Include="t_pc_branch_price.cs" />
+    <Compile Include="t_pc_branch_price_breakpoint.cs" />
+    <Compile Include="t_pc_league_branch_price.cs" />
+    <Compile Include="t_pc_price_flow_detail.cs" />
+    <Compile Include="t_pc_price_flow_master.cs" />
+    <Compile Include="t_plan_detail_memo.cs" />
+    <Compile Include="t_pm_process_yh.cs" />
+    <Compile Include="t_pm_sheet_detail.cs" />
+    <Compile Include="t_pm_sheet_master.cs" />
+    <Compile Include="t_pu_sheet_detail.cs" />
+    <Compile Include="t_pu_sheet_master.cs" />
+    <Compile Include="t_return_plan_detail_d.cs" />
+    <Compile Include="t_return_plan_master.cs" />
+    <Compile Include="t_return_rate_change.cs" />
+    <Compile Include="t_rm_balance.cs" />
+    <Compile Include="t_rm_balance_branch.cs" />
+    <Compile Include="t_rm_balance_item.cs" />
+    <Compile Include="t_rm_barcode_output.cs" />
+    <Compile Include="t_rm_casher_daysum_giv.cs" />
+    <Compile Include="t_rm_customer_analyse.cs" />
+    <Compile Include="t_rm_daysum.cs" />
+    <Compile Include="t_rm_deduct_payway_except.cs" />
+    <Compile Include="t_rm_flow_sum.cs" />
+    <Compile Include="t_rm_function.cs" />
+    <Compile Include="t_rm_gift_certificate.cs" />
+    <Compile Include="t_rm_operator_log.cs" />
+    <Compile Include="t_rm_order_saleflow.cs" />
+    <Compile Include="t_rm_payflow.cs" />
+    <Compile Include="t_rm_payin_detail.cs" />
+    <Compile Include="t_rm_payin_master.cs" />
+    <Compile Include="t_rm_plan_branch.cs" />
+    <Compile Include="t_rm_plan_detail.cs" />
+    <Compile Include="t_rm_plan_flow.cs" />
+    <Compile Include="t_rm_plan_master.cs" />
+    <Compile Include="t_rm_plan_rule.cs" />
+    <Compile Include="t_rm_pos_account.cs" />
+    <Compile Include="t_rm_protion_flow.cs" />
+    <Compile Include="t_rm_protion_rule.cs" />
+    <Compile Include="t_rm_salecust_info.cs" />
+    <Compile Include="t_rm_salecust_info_temp.cs" />
+    <Compile Include="t_rm_salecust_send.cs" />
+    <Compile Include="t_rm_saleflow.cs" />
+    <Compile Include="t_rm_saleflow_jc.cs" />
+    <Compile Include="t_rm_saleflow_jc_master.cs" />
+    <Compile Include="t_rm_saleflow_order.cs" />
+    <Compile Include="t_rm_saleflow_vip_source.cs" />
+    <Compile Include="t_rm_saleman.cs" />
+    <Compile Include="t_rm_saleman_breakpoint.cs" />
+    <Compile Include="t_rm_saleman_detail.cs" />
+    <Compile Include="t_rm_salespe_info.cs" />
+    <Compile Include="t_rm_saving_month.cs" />
+    <Compile Include="t_rm_spec_price.cs" />
+    <Compile Include="t_rm_spec_price_history.cs" />
+    <Compile Include="t_rm_tend_add_detail.cs" />
+    <Compile Include="t_rm_tend_consume_detail.cs" />
+    <Compile Include="t_rm_tend_vip_conver_detail.cs" />
+    <Compile Include="t_rm_tend_vip_conver_master.cs" />
+    <Compile Include="t_rm_tend_vip_info.cs" />
+    <Compile Include="t_rm_tend_vip_type.cs" />
+    <Compile Include="t_rm_vip_accessories_identity.cs" />
+    <Compile Include="t_rm_vip_acclist.cs" />
+    <Compile Include="t_rm_vip_agricultural_identity.cs" />
+    <Compile Include="t_rm_vip_cosmetic_identity.cs" />
+    <Compile Include="t_rm_vip_discount.cs" />
+    <Compile Include="t_rm_vip_good.cs" />
+    <Compile Include="t_rm_vip_good_flow.cs" />
+    <Compile Include="t_rm_vip_good_log.cs" />
+    <Compile Include="t_rm_vip_health_identity.cs" />
+    <Compile Include="t_rm_vip_info.cs" />
+    <Compile Include="t_rm_vip_info_breakpoint.cs" />
+    <Compile Include="t_rm_vip_info_edit.cs" />
+    <Compile Include="t_rm_vip_info_prink.cs" />
+    <Compile Include="t_rm_vip_info_source.cs" />
+    <Compile Include="t_rm_vip_item.cs" />
+    <Compile Include="t_rm_vip_itemlist.cs" />
+    <Compile Include="t_rm_vip_motherhood_identity.cs" />
+    <Compile Include="t_rm_vip_operlist.cs" />
+    <Compile Include="t_rm_vip_reference.cs" />
+    <Compile Include="t_rm_vip_savelist.cs" />
+    <Compile Include="t_rm_vip_saveset.cs" />
+    <Compile Include="t_rm_vip_set.cs" />
+    <Compile Include="t_rm_vip_type.cs" />
+    <Compile Include="t_rm_vip_type_source.cs" />
+    <Compile Include="t_rm_vip_visit.cs" />
+    <Compile Include="t_rm_vip_visit_cls.cs" />
+    <Compile Include="t_rm_vip_visit_detail.cs" />
+    <Compile Include="t_rm_vip_visit_flow.cs" />
+    <Compile Include="t_rm_vip_visit_master.cs" />
+    <Compile Include="t_saleman_item_daysum.cs" />
+    <Compile Include="t_shd_delivery_flow.cs" />
+    <Compile Include="t_shd_recpay_flow.cs" />
+    <Compile Include="t_shd_recpay_flow_detail.cs" />
+    <Compile Include="t_shd_sheet_detail.cs" />
+    <Compile Include="t_shd_sheet_detail_detail.cs" />
+    <Compile Include="t_shd_sheet_master.cs" />
+    <Compile Include="t_sheet_print_errlog.cs" />
+    <Compile Include="t_spid_operator.cs" />
+    <Compile Include="t_sp_mark_detail.cs" />
+    <Compile Include="t_sp_mark_master.cs" />
+    <Compile Include="t_sys_attendance_info.cs" />
+    <Compile Include="t_sys_attendance_spec.cs" />
+    <Compile Include="t_sys_branch_connect_parm.cs" />
+    <Compile Include="t_sys_branch_set.cs" />
+    <Compile Include="t_sys_branch_version.cs" />
+    <Compile Include="t_sys_cm_breakpoint.cs" />
+    <Compile Include="t_sys_cm_cmlog.cs" />
+    <Compile Include="t_sys_cm_data.cs" />
+    <Compile Include="t_sys_columns.cs" />
+    <Compile Include="t_sys_customer.cs" />
+    <Compile Include="t_sys_customize_report.cs" />
+    <Compile Include="t_sys_data_grant.cs" />
+    <Compile Include="t_sys_dept.cs" />
+    <Compile Include="t_sys_emp.cs" />
+    <Compile Include="t_sys_emp_log.cs" />
+    <Compile Include="t_sys_item_refer.cs" />
+    <Compile Include="t_sys_mailmsg_info.cs" />
+    <Compile Include="t_sys_mailmsg_log.cs" />
+    <Compile Include="t_sys_mailmsg_oper.cs" />
+    <Compile Include="t_sys_menu.cs" />
+    <Compile Include="t_sys_menu_desktop.cs" />
+    <Compile Include="t_sys_menu_grant.cs" />
+    <Compile Include="t_sys_menu_ver.cs" />
+    <Compile Include="t_sys_operator.cs" />
+    <Compile Include="t_sys_operator_breakpoint.cs" />
+    <Compile Include="t_sys_operator_log.cs" />
+    <Compile Include="t_sys_oper_data_grant.cs" />
+    <Compile Include="t_sys_oper_grant.cs" />
+    <Compile Include="t_sys_plukey.cs" />
+    <Compile Include="t_sys_pos_display.cs" />
+    <Compile Include="t_sys_pos_downfile_status.cs" />
+    <Compile Include="t_sys_pos_printer.cs" />
+    <Compile Include="t_sys_pos_status.cs" />
+    <Compile Include="t_sys_pos_status_history.cs" />
+    <Compile Include="t_sys_query_conditionEx.cs" />
+    <Compile Include="t_sys_reg.cs" />
+    <Compile Include="t_sys_report.cs" />
+    <Compile Include="t_sys_report_import.cs" />
+    <Compile Include="t_sys_saving_grant.cs" />
+    <Compile Include="t_sys_sheetno_flow.cs" />
+    <Compile Include="t_sys_sheet_detail_info.cs" />
+    <Compile Include="t_sys_sheet_master_info.cs" />
+    <Compile Include="t_sys_sheet_no.cs" />
+    <Compile Include="t_sys_sheet_paper_size.cs" />
+    <Compile Include="t_sys_sheet_psr_info.cs" />
+    <Compile Include="t_sys_system.cs" />
+    <Compile Include="t_sys_system_mean.cs" />
+    <Compile Include="t_sys_system_verlog.cs" />
+    <Compile Include="t_sys_template_sheet_std.cs" />
+    <Compile Include="t_sys_updown_rdlfile.cs" />
+    <Compile Include="t_sys_zjm.cs" />
+    <Compile Include="t_vip_sheet_detail.cs" />
+    <Compile Include="t_vip_sheet_master.cs" />
+    <Compile Include="t_wm_return_detail.cs" />
+    <Compile Include="t_wm_return_profit.cs" />
+    <Compile Include="t_wm_sheet_detail.cs" />
+    <Compile Include="t_wm_sheet_master.cs" />
+    <Compile Include="t_wx_promotion.cs" />
+    <Compile Include="t_wx_shop_info.cs" />
+    <Compile Include="t_wx_vip_bindflow.cs" />
+    <Compile Include="t_wx_vip_info.cs" />
+    <Compile Include="wxsf_member_save_list.cs" />
+    <Compile Include="wxsf_order_detail.cs" />
+    <Compile Include="wxsf_order_master.cs" />
+    <Compile Include="wxsf_vip_info.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

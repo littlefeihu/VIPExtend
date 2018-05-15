@@ -23,15 +23,19 @@ namespace VIPExtend
 
         private void 净水器销售记录ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            panel1.Controls.Add(new SaleRecordUserControl());
+            AddControl(new SaleRecordUserControl());
+        }
+        private void 充值记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddControl(new Vip_AcclistUserControl());
 
         }
 
-        private void 充值记录ToolStripMenuItem_Click(object sender, EventArgs e)
+        private void AddControl(UserControl userControl)
         {
-            panel1.Controls.Add(new Vip_AcclistUserControl());
-
+            userControl.Dock = DockStyle.Fill;
+            panel1.Controls.Clear();
+            panel1.Controls.Add(userControl);
         }
     }
 }

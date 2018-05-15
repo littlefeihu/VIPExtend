@@ -51,7 +51,9 @@
     <Compile Include="cw_t_select.cs" />
     <Compile Include="cw_t_sup_info.cs" />
     <Compile Include="cw_t_system.cs" />
+    <Compile Include="dtproperties.cs" />
     <Compile Include="dtproperty.cs" />
+    <Compile Include="MaintainRecord.cs" />
     <Compile Include="mess_t_mess_flow.cs" />
     <Compile Include="mess_t_mess_record.cs" />
     <Compile Include="mess_t_sys_system.cs" />

@@ -15,7 +15,8 @@ namespace DataRepository
         public virtual DbSet<cw_t_select> cw_t_select { get; set; }
         public virtual DbSet<cw_t_sup_info> cw_t_sup_info { get; set; }
         public virtual DbSet<cw_t_system> cw_t_system { get; set; }
-        public virtual DbSet<dtproperty> dtproperties { get; set; }
+        public virtual DbSet<dtproperties> dtproperties { get; set; }
+        public virtual DbSet<MaintainRecord> MaintainRecord { get; set; }
         public virtual DbSet<mess_t_mess_flow> mess_t_mess_flow { get; set; }
         public virtual DbSet<mess_t_mess_record> mess_t_mess_record { get; set; }
         public virtual DbSet<mess_t_sys_system> mess_t_sys_system { get; set; }
@@ -296,9 +297,9 @@ namespace DataRepository
         public virtual DbSet<t_wx_shop_info> t_wx_shop_info { get; set; }
         public virtual DbSet<t_wx_vip_bindflow> t_wx_vip_bindflow { get; set; }
         public virtual DbSet<t_wx_vip_info> t_wx_vip_info { get; set; }
-        public virtual DbSet<pbcatedt> pbcatedts { get; set; }
-        public virtual DbSet<pbcatfmt> pbcatfmts { get; set; }
-        public virtual DbSet<pbcatvld> pbcatvlds { get; set; }
+        public virtual DbSet<pbcatedt> pbcatedt { get; set; }
+        public virtual DbSet<pbcatfmt> pbcatfmt { get; set; }
+        public virtual DbSet<pbcatvld> pbcatvld { get; set; }
         public virtual DbSet<t_im_checkrecord_detail> t_im_checkrecord_detail { get; set; }
         public virtual DbSet<t_im_checkrecord_master> t_im_checkrecord_master { get; set; }
         public virtual DbSet<t_return_plan_detail_d> t_return_plan_detail_d { get; set; }
@@ -394,11 +395,11 @@ namespace DataRepository
                 .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<dtproperty>()
+            modelBuilder.Entity<dtproperties>()
                 .Property(e => e.property)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<dtproperty>()
+            modelBuilder.Entity<dtproperties>()
                 .Property(e => e.value)
                 .IsUnicode(false);
 

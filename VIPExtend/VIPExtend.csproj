@@ -68,6 +68,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frms\AddVipAccForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\AddVipAccForm.Designer.cs">
+      <DependentUpon>AddVipAccForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\MaintanceRecordSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\MaintanceRecordSettingForm.Designer.cs">
+      <DependentUpon>MaintanceRecordSettingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\MaintanceRecordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\MaintanceRecordForm.Designer.cs">
+      <DependentUpon>MaintanceRecordForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Controls\SaleRecordUserControl.resx">
@@ -78,6 +96,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\AddVipAccForm.resx">
+      <DependentUpon>AddVipAccForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\MaintanceRecordSettingForm.resx">
+      <DependentUpon>MaintanceRecordSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\MaintanceRecordForm.resx">
+      <DependentUpon>MaintanceRecordForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

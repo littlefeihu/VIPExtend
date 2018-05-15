@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CommonHelper;
 using DataRepository;
+using VIPExtend.Frms;
 
 namespace VIPExtend.Controls
 {
@@ -33,7 +34,7 @@ namespace VIPExtend.Controls
                 var querysql = "select a.com_no, c.card_no, c.vip_name, c.vip_sex, c.vip_start_date, c.vip_end_date, a.oper_date, b.item_brandname, b.item_name ,b.item_no from t_rm_saleflow as a left join t_bd_item_info as b on a.item_no = b.item_no left join t_rm_vip_info as c on a.card_no = c.card_no";
 
 
-                querysql += "where a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
+                querysql += "  where a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
 
 
                 if (!string.IsNullOrEmpty(vipcardno))
@@ -50,6 +51,52 @@ namespace VIPExtend.Controls
                 dataGridView1.DataSource = records.ToList();
 
 
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Check();
+
+        }
+
+
+        private void Check()
+        {
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("请选择一条销售记录"); return;
+            }
+
+            var record = dataGridView1.CurrentRow.DataBoundItem as SaleRecord;
+            if (record != null)
+            {
+                MaintanceRecordForm frm = new MaintanceRecordForm(record.com_no);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("请选择一条销售记录");
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //保养设置
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "colSetMaintence")
+            {
+                var record = dataGridView1.CurrentRow.DataBoundItem as SaleRecord;
+                MaintanceRecordSettingForm frm = new MaintanceRecordSettingForm(record);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                frm.ShowDialog();
+
+            }
+            //查看保养
+            if (dataGridView1.Columns[e.ColumnIndex].Name == "colcheck")
+            {
+                Check();
             }
         }
     }

@@ -27,9 +27,19 @@ namespace VIPExtend.Controls
 
         private void Search()
         {
+
+            var vipcardno = textBox1.Text;
+
+            if (string.IsNullOrEmpty(vipcardno))
+            {
+                MessageBox.Show("会员卡号不能为空");
+                return;
+            }
+
+
             using (var db = new Model1())
             {
-                var vipcardno = textBox1.Text;
+
 
                 var querysql = "select [card_no] ,[ope_date],[acc_num] ,[oper_des]   FROM [dbo].[t_rm_vip_acclist] ";
 

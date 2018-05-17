@@ -17,7 +17,7 @@ namespace VIPExtend.Controls
         public SaleRecordUserControl()
         {
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Now.AddMonths(-3);
+            dateTimePicker1.Value = DateTime.Now.AddMonths(-DateTime.Now.Month);
             dataGridView1.AutoGenerateColumns = false;
         }
 
@@ -36,7 +36,6 @@ namespace VIPExtend.Controls
 
                 querysql += "  where a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
 
-
                 if (!string.IsNullOrEmpty(vipcardno))
                 {
                     querysql += " and c.card_no ='" + vipcardno + "'";
@@ -52,13 +51,6 @@ namespace VIPExtend.Controls
 
 
             }
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            Check();
-
         }
 
 

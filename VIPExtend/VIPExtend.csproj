@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -50,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationInstance.cs" />
     <Compile Include="Controls\SaleRecordUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -73,6 +75,12 @@
     </Compile>
     <Compile Include="Frms\AddVipAccForm.Designer.cs">
       <DependentUpon>AddVipAccForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frms\MaintainenceAlertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frms\MaintainenceAlertForm.Designer.cs">
+      <DependentUpon>MaintainenceAlertForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Frms\MaintanceRecordSettingForm.cs">
       <SubType>Form</SubType>
@@ -99,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\AddVipAccForm.resx">
       <DependentUpon>AddVipAccForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frms\MaintainenceAlertForm.resx">
+      <DependentUpon>MaintainenceAlertForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frms\MaintanceRecordSettingForm.resx">
       <DependentUpon>MaintanceRecordSettingForm.cs</DependentUpon>
@@ -136,6 +147,9 @@
       <Project>{4bcbd771-d0e9-47ca-8051-6b7db46d3452}</Project>
       <Name>DataRepository</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="wn.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

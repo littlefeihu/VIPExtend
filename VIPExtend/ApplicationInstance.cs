@@ -38,13 +38,15 @@ namespace VIPExtend
             Alert();
         }
 
+        public List<SaleRecord> alertData = new List<SaleRecord>();
+
+
         public void Alert()
         {
             if (!isRunning)
             {
                 isRunning = true;
 
-                List<SaleRecord> alertData = new List<SaleRecord>();
 
 
                 var AlertTimes = int.Parse(System.Configuration.ConfigurationManager.AppSettings["AlertTimes"]);

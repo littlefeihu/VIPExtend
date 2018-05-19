@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +52,7 @@
             this.Column1,
             this.Column2,
             this.Column3,
+            this.Column9,
             this.Column4,
             this.Column5,
             this.Column6,
@@ -78,12 +80,21 @@
             this.Column2.DataPropertyName = "card_no";
             this.Column2.HeaderText = "会员卡号";
             this.Column2.Name = "Column2";
+            this.Column2.Width = 80;
             // 
             // Column3
             // 
             this.Column3.DataPropertyName = "vip_name";
             this.Column3.HeaderText = "会员名称";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 80;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "mobile";
+            this.Column9.HeaderText = "电话";
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 80;
             // 
             // Column4
             // 
@@ -97,6 +108,7 @@
             this.Column5.DataPropertyName = "item_name";
             this.Column5.HeaderText = "产品名称";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 80;
             // 
             // Column6
             // 
@@ -110,6 +122,7 @@
             this.Column7.DataPropertyName = "MaintainCount";
             this.Column7.HeaderText = "已保养次数";
             this.Column7.Name = "Column7";
+            this.Column7.Width = 90;
             // 
             // Column8
             // 
@@ -120,17 +133,17 @@
             // 
             // colSetMaintence
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "设置保养";
-            this.colSetMaintence.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "设置保养";
+            this.colSetMaintence.DefaultCellStyle = dataGridViewCellStyle1;
             this.colSetMaintence.HeaderText = "设置保养";
             this.colSetMaintence.Name = "colSetMaintence";
             // 
             // colcheck
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "查看保养记录";
-            this.colcheck.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "查看保养记录";
+            this.colcheck.DefaultCellStyle = dataGridViewCellStyle2;
             this.colcheck.HeaderText = "查看保养记录";
             this.colcheck.Name = "colcheck";
             // 
@@ -154,6 +167,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;

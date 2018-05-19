@@ -30,7 +30,7 @@ namespace VIPExtend.Controls
                 var vipname = textBox2.Text;
                 var begindate = dateTimePicker1.Value;
                 var enddate = dateTimePicker2.Value;
-                var querysql = "select a.com_no, c.card_no, c.vip_name, c.vip_sex, c.vip_start_date, c.vip_end_date, a.oper_date, b.item_brandname, b.item_name ,b.item_no from t_rm_saleflow as a left join t_bd_item_info as b on a.item_no = b.item_no left join t_rm_vip_info as c on a.card_no = c.card_no";
+                var querysql = "select a.com_no, c.card_no, c.vip_name, c.vip_sex, c.vip_start_date, c.vip_end_date, a.oper_date, b.item_brandname, b.item_name ,b.item_no,c.mobile from t_rm_saleflow as a left join t_bd_item_info as b on a.item_no = b.item_no left join t_rm_vip_info as c on a.card_no = c.card_no";
 
                 querysql += "  where a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
 
@@ -93,6 +93,11 @@ namespace VIPExtend.Controls
         private void button2_Click(object sender, EventArgs e)
         {
             ApplicationInstance.Instance.Alert();
+
+            if (ApplicationInstance.Instance.alertData.Count == 0)
+            {
+                MessageBox.Show("还没有需要保养的记录");
+            }
         }
     }
 }

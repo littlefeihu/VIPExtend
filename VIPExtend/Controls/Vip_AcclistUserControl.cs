@@ -41,6 +41,7 @@ namespace VIPExtend.Controls
             {
 
 
+
                 var querysql = "select [card_no] ,[ope_date],[acc_num] ,[oper_des]   FROM [dbo].[t_rm_vip_acclist] ";
 
                 if (!string.IsNullOrEmpty(vipcardno))
@@ -48,9 +49,11 @@ namespace VIPExtend.Controls
                     querysql += " where  card_no  = '" + vipcardno + "'";
                 }
 
+                var vipinfo = db.t_rm_vip_info.FirstOrDefault(o => o.card_no == vipcardno);
+
                 var records = db.Database.SqlQuery<Vip_Acclist>(querysql);
 
-                label2.Text = "积分总数：" + records.Sum(o => o.acc_num);
+                label2.Text = "积分总数：" + vipinfo.now_acc_num;
 
                 dataGridView1.DataSource = records.ToList();
 

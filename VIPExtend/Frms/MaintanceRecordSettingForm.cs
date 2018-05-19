@@ -22,7 +22,7 @@ namespace VIPExtend.Frms
 
             using (var db = new Model1())
             {
-                comboBox1.DataSource = db.t_rm_saleflow.Select(o => o.sale_man).Distinct().ToList();
+                comboBox1.DataSource = db.t_rm_saleman.Select(o => o.sale_name).Distinct().ToList();
             }
         }
 

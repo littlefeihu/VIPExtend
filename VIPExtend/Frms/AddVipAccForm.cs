@@ -45,6 +45,9 @@ namespace VIPExtend.Frms
                     MessageBox.Show("会员卡号不存在，请重新输入");
                     return;
                 }
+
+                vipinfo.acc_num = vipinfo.acc_num + accnum;
+
                 db.t_rm_vip_acclist.Add(new t_rm_vip_acclist
                 {
                     card_no = vipinfo.card_no,
@@ -56,7 +59,7 @@ namespace VIPExtend.Frms
                     ope_date = DateTime.Now,
                     flow_no = "",
                     consum_amt = 0,
-                    acc_num = 100,
+                    acc_num = accnum,
                     oper_des = remark
                 });
                 db.SaveChanges();

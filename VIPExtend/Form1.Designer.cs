@@ -36,13 +36,16 @@
             this.充值记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.开机启动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.查询净水器销售记录ToolStripMenuItem});
+            this.查询净水器销售记录ToolStripMenuItem,
+            this.设置ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1211, 25);
@@ -61,14 +64,14 @@
             // 净水器销售记录ToolStripMenuItem
             // 
             this.净水器销售记录ToolStripMenuItem.Name = "净水器销售记录ToolStripMenuItem";
-            this.净水器销售记录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.净水器销售记录ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.净水器销售记录ToolStripMenuItem.Text = "净水器销售记录";
             this.净水器销售记录ToolStripMenuItem.Click += new System.EventHandler(this.净水器销售记录ToolStripMenuItem_Click);
             // 
             // 充值记录ToolStripMenuItem
             // 
             this.充值记录ToolStripMenuItem.Name = "充值记录ToolStripMenuItem";
-            this.充值记录ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.充值记录ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.充值记录ToolStripMenuItem.Text = "积分记录";
             this.充值记录ToolStripMenuItem.Click += new System.EventHandler(this.充值记录ToolStripMenuItem_Click);
             // 
@@ -86,6 +89,21 @@
             this.notifyIcon1.Text = "小帮手";
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
+            // 
+            // 设置ToolStripMenuItem
+            // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.开机启动ToolStripMenuItem});
+            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // 开机启动ToolStripMenuItem
+            // 
+            this.开机启动ToolStripMenuItem.Name = "开机启动ToolStripMenuItem";
+            this.开机启动ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.开机启动ToolStripMenuItem.Text = "开机启动";
+            this.开机启动ToolStripMenuItem.Click += new System.EventHandler(this.开机启动ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -111,6 +129,8 @@
         private System.Windows.Forms.ToolStripMenuItem 充值记录ToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 开机启动ToolStripMenuItem;
     }
 }
 

@@ -7,7 +7,7 @@
     <ProjectGuid>{9A2FAAC4-CBF8-4C4A-90DE-6F352276CAE5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>VIPExtend</RootNamespace>
-    <AssemblyName>VIPExtend</AssemblyName>
+    <AssemblyName>小帮手</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -29,6 +29,16 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationIcon>wn.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
@@ -149,7 +159,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="wn.ico" />
+    <Content Include="wn.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

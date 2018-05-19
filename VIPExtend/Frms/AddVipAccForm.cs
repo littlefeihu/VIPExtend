@@ -47,7 +47,7 @@ namespace VIPExtend.Frms
                 }
 
                 vipinfo.acc_num = vipinfo.acc_num + accnum;
-
+                vipinfo.now_acc_num = vipinfo.now_acc_num + accnum;
                 db.t_rm_vip_acclist.Add(new t_rm_vip_acclist
                 {
                     card_no = vipinfo.card_no,

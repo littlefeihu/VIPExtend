@@ -13,6 +13,8 @@ namespace CommonHelper
 
         public string vip_name { get; set; }
 
+        public string mobile { get; set; }
+
         public string vip_sex { get; set; }
 
         public DateTime? vip_start_date { get; set; }

@@ -51,6 +51,11 @@ namespace VIPExtend.Controls
 
                 var vipinfo = db.t_rm_vip_info.FirstOrDefault(o => o.card_no == vipcardno);
 
+                if (vipinfo == null)
+                {
+                    MessageBox.Show("会员账号不存在，请检查"); return;
+                }
+
                 var records = db.Database.SqlQuery<Vip_Acclist>(querysql);
 
                 label2.Text = "积分总数：" + vipinfo.now_acc_num;

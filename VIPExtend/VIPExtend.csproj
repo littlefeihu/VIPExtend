@@ -62,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationInstance.cs" />
+    <Compile Include="Controls\IgnoreAccNumUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\IgnoreAccNumUserControl.Designer.cs">
+      <DependentUpon>IgnoreAccNumUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\SaleRecordUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\IgnoreAccNumUserControl.resx">
+      <DependentUpon>IgnoreAccNumUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\SaleRecordUserControl.resx">
       <DependentUpon>SaleRecordUserControl.cs</DependentUpon>
     </EmbeddedResource>

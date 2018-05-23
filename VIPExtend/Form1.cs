@@ -140,5 +140,10 @@ namespace VIPExtend
                 Rkey.SetValue(keyName, System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
             }
         }
+
+        private void 会员送积分排除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddControl(new IgnoreAccNumUserControl());
+        }
     }
 }

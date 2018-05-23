@@ -55,12 +55,21 @@ namespace VIPExtend
                     alertData = db.Database.SqlQuery<SaleRecord>("exec QuerySaleRecrod @alerttimes", sqlParms).ToList();
 
                     var vipInfos = db.t_rm_vip_info.ToList();
+                    var ignoretxt = INIHelper.ReadString("IgnoreVIP", DirectoryManage.GetINIFullPath());
+
+
+                    var ignoreList = ignoretxt.Split(',');
 
                     foreach (var vipinfo in vipInfos)
                     {
                         var accnum = int.Parse(System.Configuration.ConfigurationManager.AppSettings["VipAccnum"]); ;
                         if (db.t_rm_vip_acclist.Any(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no && o.acc_num == accnum && o.oper_id == "1001" && o.ope_date.Value.Month == DateTime.Now.Month && o.ope_date.Value.Year == DateTime.Now.Year))
                         {//如果这个月份已经送过积分 则跳过
+                            continue;
+                        }
+
+                        if (ignoreList.Contains(vipinfo.card_no))
+                        {//如果会员忽略列表里存在这个会员卡号，择跳过
                             continue;
                         }
 

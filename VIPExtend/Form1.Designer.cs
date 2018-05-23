@@ -34,10 +34,11 @@
             this.查询净水器销售记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.净水器销售记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.充值记录ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.开机启动ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.会员送积分排除ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +76,22 @@
             this.充值记录ToolStripMenuItem.Text = "积分记录";
             this.充值记录ToolStripMenuItem.Click += new System.EventHandler(this.充值记录ToolStripMenuItem_Click);
             // 
+            // 设置ToolStripMenuItem
+            // 
+            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.开机启动ToolStripMenuItem,
+            this.会员送积分排除ToolStripMenuItem});
+            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
+            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.设置ToolStripMenuItem.Text = "设置";
+            // 
+            // 开机启动ToolStripMenuItem
+            // 
+            this.开机启动ToolStripMenuItem.Name = "开机启动ToolStripMenuItem";
+            this.开机启动ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.开机启动ToolStripMenuItem.Text = "开机启动";
+            this.开机启动ToolStripMenuItem.Click += new System.EventHandler(this.开机启动ToolStripMenuItem_Click);
+            // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -90,20 +107,12 @@
             this.notifyIcon1.Visible = true;
             this.notifyIcon1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon1_MouseDoubleClick);
             // 
-            // 设置ToolStripMenuItem
+            // 会员送积分排除ToolStripMenuItem
             // 
-            this.设置ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.开机启动ToolStripMenuItem});
-            this.设置ToolStripMenuItem.Name = "设置ToolStripMenuItem";
-            this.设置ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
-            this.设置ToolStripMenuItem.Text = "设置";
-            // 
-            // 开机启动ToolStripMenuItem
-            // 
-            this.开机启动ToolStripMenuItem.Name = "开机启动ToolStripMenuItem";
-            this.开机启动ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.开机启动ToolStripMenuItem.Text = "开机启动";
-            this.开机启动ToolStripMenuItem.Click += new System.EventHandler(this.开机启动ToolStripMenuItem_Click);
+            this.会员送积分排除ToolStripMenuItem.Name = "会员送积分排除ToolStripMenuItem";
+            this.会员送积分排除ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.会员送积分排除ToolStripMenuItem.Text = "会员送积分排除";
+            this.会员送积分排除ToolStripMenuItem.Click += new System.EventHandler(this.会员送积分排除ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -131,6 +140,7 @@
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripMenuItem 设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 开机启动ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 会员送积分排除ToolStripMenuItem;
     }
 }
 

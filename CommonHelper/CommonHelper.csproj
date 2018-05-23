@@ -40,6 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants.cs" />
+    <Compile Include="DirectoryManage.cs" />
+    <Compile Include="INIHelper.cs" />
     <Compile Include="SaleRecordAlert.cs" />
     <Compile Include="Vip_Acclist.cs" />
     <Compile Include="SaleRecord.cs" />

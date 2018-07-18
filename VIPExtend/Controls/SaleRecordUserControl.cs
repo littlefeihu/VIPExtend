@@ -32,7 +32,7 @@ namespace VIPExtend.Controls
                 var enddate = dateTimePicker2.Value;
                 var querysql = "select a.com_no, c.card_no, c.vip_name, c.vip_sex, c.vip_start_date, c.vip_end_date, a.oper_date, b.item_brandname, b.item_name ,b.item_no,c.mobile from t_rm_saleflow as a left join t_bd_item_info as b on a.item_no = b.item_no left join t_rm_vip_info as c on a.card_no = c.card_no";
 
-                querysql += "  where a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
+                querysql += "  where  b.item_name like '%净水机%' and  a.oper_date >='" + begindate + "' and a.oper_date<='" + enddate + "' ";
 
                 if (!string.IsNullOrEmpty(vipcardno))
                 {

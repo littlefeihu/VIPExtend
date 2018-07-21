@@ -81,15 +81,30 @@ namespace VIPExtend
                             //    continue;
                             //}
 
-                            var accnum = int.Parse(System.Configuration.ConfigurationManager.AppSettings["VipAccnum"]); ;
-                            if (db.t_rm_vip_acclist.Any(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no && o.acc_num == accnum && o.oper_id == "1001" && o.ope_date.Value.Month == DateTime.Now.Month && o.ope_date.Value.Year == DateTime.Now.Year))
-                            {//如果这个月份已经送过积分 则跳过
+                            if (db.t_rm_vip_acclist.Where(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no).Count() > 15)
+                            {
                                 if (mode)
                                 {
-                                    MessageBox.Show("这个月份已经送过积分 则跳过");
+                                    MessageBox.Show("已经超过送积分次数 则跳过");
                                 }
                                 continue;
                             }
+
+
+                            var accnum = int.Parse(System.Configuration.ConfigurationManager.AppSettings["VipAccnum"]);
+                            if (db.t_rm_vip_acclist.Any(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no))
+                            {
+                                if (db.t_rm_vip_acclist.OrderByDescending(o => o.ope_date).FirstOrDefault().ope_date.Value.AddDays(30) < DateTime.Now)
+                                {
+                                    if (mode)
+                                    {
+                                        MessageBox.Show("距离上次送积分还不到30天 则跳过");
+                                    }
+                                    continue;
+                                }
+
+                            }
+
 
                             if (ignoreList.Contains(vipinfo.card_no))
                             {

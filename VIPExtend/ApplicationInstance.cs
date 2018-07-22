@@ -43,123 +43,134 @@ namespace VIPExtend
 
         public void Alert()
         {
-            if (!isRunning)
+            try
             {
-                isRunning = true;
 
-                var AlertTimes = int.Parse(System.Configuration.ConfigurationManager.AppSettings["AlertTimes"]);
-                using (var db = new Model1())
+                if (!isRunning)
                 {
-                    SqlParameter[] sqlParms = new SqlParameter[1];
-                    sqlParms[0] = new SqlParameter("@alerttimes", AlertTimes);
-                    alertData = db.Database.SqlQuery<SaleRecord>("exec QuerySaleRecrod @alerttimes", sqlParms).ToList();
+                    isRunning = true;
 
-                    var vipInfos = db.t_rm_vip_info.ToList();
-                    var ignoretxt = INIHelper.ReadString("IgnoreVIP", DirectoryManage.GetINIFullPath());
-
-
-                    var ignoreList = ignoretxt.Split(',');
-
-                    var mode = System.Configuration.ConfigurationManager.AppSettings["Mode"] == "debug";
-
-                    if (mode)
+                    var AlertTimes = int.Parse(System.Configuration.ConfigurationManager.AppSettings["AlertTimes"]);
+                    using (var db = new Model1())
                     {
-                        MessageBox.Show("vip数量：" + vipInfos.Count.ToString());
-                    }
+                        SqlParameter[] sqlParms = new SqlParameter[1];
+                        sqlParms[0] = new SqlParameter("@alerttimes", AlertTimes);
+                        alertData = db.Database.SqlQuery<SaleRecord>("exec QuerySaleRecrod @alerttimes", sqlParms).ToList();
 
-                    foreach (var vipinfo in vipInfos)
-                    {
-                        try
+                        var vipInfos = db.t_rm_vip_info.ToList();
+                        var ignoretxt = INIHelper.ReadString("IgnoreVIP", DirectoryManage.GetINIFullPath());
+
+
+                        var ignoreList = ignoretxt.Split(',');
+
+                        var mode = System.Configuration.ConfigurationManager.AppSettings["Mode"] == "debug";
+
+                        if (mode)
                         {
-                            //if (vipinfo.vip_start_date.HasValue && vipinfo.vip_start_date.Value.Month == DateTime.Now.Month)
-                            //{//当月不反积分
+                            MessageBox.Show("vip数量：" + vipInfos.Count.ToString());
+                        }
 
-                            //    if (mode)
-                            //    {
-                            //        MessageBox.Show("当月不反积分");
-                            //    }
-                            //    continue;
-                            //}
-
-                            if (db.t_rm_vip_acclist.Where(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no).Count() > 15)
+                        foreach (var vipinfo in vipInfos)
+                        {
+                            try
                             {
-                                if (mode)
-                                {
-                                    MessageBox.Show("已经超过送积分次数 则跳过");
-                                }
-                                continue;
-                            }
+                                //if (vipinfo.vip_start_date.HasValue && vipinfo.vip_start_date.Value.Month == DateTime.Now.Month)
+                                //{//当月不反积分
+
+                                //    if (mode)
+                                //    {
+                                //        MessageBox.Show("当月不反积分");
+                                //    }
+                                //    continue;
+                                //}
 
 
-                            var accnum = int.Parse(System.Configuration.ConfigurationManager.AppSettings["VipAccnum"]);
-                            if (db.t_rm_vip_acclist.Any(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no))
-                            {
-                                if (db.t_rm_vip_acclist.OrderByDescending(o => o.ope_date).FirstOrDefault().ope_date.Value.AddDays(30) < DateTime.Now)
+                                if (db.t_rm_vip_acclist.Where(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no).Count() > 15)
                                 {
                                     if (mode)
                                     {
-                                        MessageBox.Show("距离上次送积分还不到30天 则跳过");
+                                        MessageBox.Show("已经超过送积分次数 则跳过");
                                     }
                                     continue;
                                 }
 
-                            }
+
+                                var accnum = int.Parse(System.Configuration.ConfigurationManager.AppSettings["VipAccnum"]);
+
+                                var acclist = db.t_rm_vip_acclist.Where(o => o.oper_des == "活动##送积分" && o.memo == "活动##送积分" && o.card_no == vipinfo.card_no).ToList();
+                                if (acclist.Count > 0)
+                                {
+                                    var date1 = acclist.OrderByDescending(o => o.ope_date).FirstOrDefault().ope_date.Value.AddDays(30);
+                                    if (date1 >= DateTime.Now)
+                                    {
+                                        if (mode)
+                                        {
+                                            MessageBox.Show("距离上次送积分还不到30天 则跳过");
+                                        }
+                                        continue;
+                                    }
+                                }
 
 
-                            if (ignoreList.Contains(vipinfo.card_no))
-                            {
+                                if (ignoreList.Contains(vipinfo.card_no))
+                                {
+                                    if (mode)
+                                    {
+                                        MessageBox.Show("如果会员忽略列表里存在这个会员卡号，择跳过");
+                                    }
+                                    //如果会员忽略列表里存在这个会员卡号，择跳过
+                                    continue;
+                                }
+
                                 if (mode)
                                 {
-                                    MessageBox.Show("如果会员忽略列表里存在这个会员卡号，择跳过");
+                                    MessageBox.Show("vip数量：" + vipInfos.Count.ToString());
                                 }
-                                //如果会员忽略列表里存在这个会员卡号，择跳过
-                                continue;
-                            }
+                                vipinfo.acc_num = vipinfo.acc_num + accnum;
+                                vipinfo.now_acc_num = vipinfo.now_acc_num + accnum;
 
-                            if (mode)
-                            {
-                                MessageBox.Show("vip数量：" + vipInfos.Count.ToString());
+                                db.t_rm_vip_acclist.Add(new t_rm_vip_acclist
+                                {
+                                    card_no = vipinfo.card_no,
+                                    card_id = vipinfo.card_id,
+                                    card_type = vipinfo.card_type,
+                                    branch_no = "000",
+                                    oper_type = "2",
+                                    oper_id = "1001",
+                                    ope_date = DateTime.Now,
+                                    flow_no = "",
+                                    consum_amt = 0,
+                                    acc_num = accnum,
+                                    oper_des = "活动##送积分",
+                                    memo = "活动##送积分"
+                                });
                             }
-                            vipinfo.acc_num = vipinfo.acc_num + accnum;
-                            vipinfo.now_acc_num = vipinfo.now_acc_num + accnum;
-
-                            db.t_rm_vip_acclist.Add(new t_rm_vip_acclist
+                            catch (Exception ex)
                             {
-                                card_no = vipinfo.card_no,
-                                card_id = vipinfo.card_id,
-                                card_type = vipinfo.card_type,
-                                branch_no = "000",
-                                oper_type = "2",
-                                oper_id = "1001",
-                                ope_date = DateTime.Now,
-                                flow_no = "",
-                                consum_amt = 0,
-                                acc_num = accnum,
-                                oper_des = "活动##送积分",
-                                memo = "活动##送积分"
-                            });
+                                MessageBox.Show("错误：" + ex.ToString());
+
+                            }
                         }
-                        catch (Exception ex)
+
+                        db.SaveChanges();
+
+
+                        if (alertData.Count > 0)
                         {
-                            MessageBox.Show("错误：" + ex.ToString());
-
+                            MaintainenceAlertForm form = new MaintainenceAlertForm(alertData);
+                            form.ShowDialog();
                         }
+
+                        isRunning = false;
                     }
-
-                    db.SaveChanges();
-
-
-                    if (alertData.Count > 0)
-                    {
-                        MaintainenceAlertForm form = new MaintainenceAlertForm(alertData);
-                        form.ShowDialog();
-                    }
-
-                    isRunning = false;
                 }
+
+
             }
-
-
+            catch (Exception ex)
+            {
+                MessageBox.Show("错误：" + ex.ToString());
+            }
         }
     }
 }
